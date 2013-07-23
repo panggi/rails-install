@@ -68,7 +68,7 @@ sudo -v >/dev/null 2>&1 || { echo $script_runner has no sudo privileges ; exit 1
 echo -e "\n\n!!! Set to install rbenv for user: $script_runner !!! \n"
 
 echo -e "\n=> Creating install dir..."
-cd && mkdir -p railsinstall/src && cd railsinstall && touch install.log
+cd && mkdir -p rails-install/src && cd rails-install && touch install.log
 echo "==> done..."
 
 echo -e "\n=> Downloading and running recipe for $distro...\n"
