@@ -74,9 +74,9 @@ echo "==> done..."
 echo -e "\n=> Downloading and running recipe for $distro...\n"
 #Download the distro specific recipe and run it, passing along all the variables as args
 if [[ $MACHTYPE = *linux* ]] ; then
-  wget --no-check-certificate -O $railsinstall_path/src/$distro.sh https://raw.github.com/joshfng/railsready/master/recipes/$distro.sh && cd $railsready_path/src && bash $distro.sh $ruby_version $ruby_version_string $ruby_source_url $ruby_source_tar_name $ruby_source_dir_name $whichRuby $railsinstall_path $log_file
+  wget --no-check-certificate -O $railsinstall_path/src/$distro.sh https://raw.github.com/panggi/rails-install/master/recipes/$distro.sh && cd $railsready_path/src && bash $distro.sh $ruby_version $ruby_version_string $ruby_source_url $ruby_source_tar_name $ruby_source_dir_name $whichRuby $railsinstall_path $log_file
 else
-  cd $railsinstall_path/src && curl -O https://raw.github.com/joshfng/railsready/master/recipes/$distro.sh && bash $distro.sh $ruby_version $ruby_version_string $ruby_source_url $ruby_source_tar_name $ruby_source_dir_name $whichRuby $railsinstall_path $log_file
+  cd $railsinstall_path/src && curl -O https://raw.github.com/panggi/rails-install/master/recipes/$distro.sh && bash $distro.sh $ruby_version $ruby_version_string $ruby_source_url $ruby_source_tar_name $ruby_source_dir_name $whichRuby $railsinstall_path $log_file
 fi
 echo -e "\n==> done running $distro specific commands..."
 
