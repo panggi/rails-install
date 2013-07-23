@@ -88,11 +88,11 @@ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
 echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 echo -e "\n=> Installing ruby-build  \n"
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-source ~/.bashrc
+
 source ~/.bash_profile
 
 echo -e "\n=> Installing ruby \n"
-rbenv install $ruby_version_string >> $log_file 2>&1
+rbenv install $ruby_version_string
 rbenv rehash
 rbenv global $ruby_version_string
 echo "===> done..."
