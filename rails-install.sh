@@ -88,19 +88,14 @@ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
 echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 echo -e "\n=> Installing ruby-build  \n"
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+source ~/.bashrc
+source ~/.bash_profile
+
 echo -e "\n=> Installing ruby \n"
 rbenv install $ruby_version_string >> $log_file 2>&1
 rbenv rehash
 rbenv global $ruby_version_string
 echo "===> done..."
-
-# Reload bash
-echo -e "\n=> Reloading shell so ruby and rubygems are available..."
-
-source ~/.bashrc
-source ~/.bash_profile
-
-echo "==> done..."
 
 echo -e "\n=> Updating Rubygems..."
 
@@ -112,6 +107,8 @@ echo -e "\n=> Installing Bundler, Passenger and Rails..."
 
 gem install bundler passenger --no-ri --no-rdoc -f >> $log_file 2>&1
 gem install rails -v 4.0.0 --no-ri --no-rdoc -f >> $log_file 2>&1
+
+rbenv rehash
 
 echo "==> done..."
 
