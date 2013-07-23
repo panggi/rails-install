@@ -89,6 +89,7 @@ echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 echo -e "\n=> Installing ruby-build  \n"
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 
+source ~/.bashrc
 source ~/.bash_profile
 
 echo -e "\n=> Installing ruby \n"
