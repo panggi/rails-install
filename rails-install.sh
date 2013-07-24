@@ -5,6 +5,7 @@ set -e
 
 ruby_version="2.0.0"
 ruby_version_string="2.0.0-p0"
+rails_version_string="4.0.0"
 ruby_source_url="http://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p0.tar.gz"
 ruby_source_tar_name="ruby-2.0.0-p0.tar.gz"
 ruby_source_dir_name="ruby-2.0.0-p0"
@@ -92,7 +93,7 @@ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-bu
 source ~/.bashrc
 source ~/.bash_profile
 
-echo -e "\n=> Installing ruby \n"
+echo -e "\n=> Installing ruby $ruby_version_string... \n"
 rbenv install $ruby_version_string >> $log_file 2>&1
 rbenv rehash
 rbenv global $ruby_version_string
@@ -107,7 +108,7 @@ echo "==> done..."
 echo -e "\n=> Installing Bundler, Passenger and Rails..."
 
 gem install bundler passenger --no-ri --no-rdoc -f >> $log_file 2>&1
-gem install rails -v 4.0.0 --no-ri --no-rdoc -f >> $log_file 2>&1
+gem install rails -v $rails_version_string --no-ri --no-rdoc -f >> $log_file 2>&1
 
 rbenv rehash
 
