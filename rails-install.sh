@@ -10,7 +10,7 @@ ruby_source_url="http://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p0.tar.gz"
 ruby_source_tar_name="ruby-2.0.0-p0.tar.gz"
 ruby_source_dir_name="ruby-2.0.0-p0"
 script_runner=$(whoami)
-railsinstall_path=$(cd && pwd)/rails-install
+railsinstall_path=$(cd && pwd)/installer/rails-install
 log_file="$railsinstall_path/install.log"
 
 control_c()
